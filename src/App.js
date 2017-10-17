@@ -40,20 +40,15 @@ class App extends React.Component {
   }
 
   increment(id) {
-    console.log("id: ", id)
     const randomNum = Math.floor(Math.random() * 100);
-    console.log("randomNum: ", randomNum);
     this.axiosCall(id, randomNum)
     .then(response => {
       this.upDateArray(id, randomNum)
-
     });
   }
 
   decrement(id) {
-    console.log("id: ", id)
     const randomNum = Math.floor(Math.random() * -100);
-    console.log("randomNum: ", randomNum);
     this.axiosCall(id, randomNum)
     .then(response => {
       this.upDateArray(id, randomNum)
@@ -75,7 +70,6 @@ class App extends React.Component {
     axios.get(`http://numbers-api.herokuapp.com/counters`)
       .then(response => {
         this.setState({counts: response.data})
-        console.log(response.data)
       });
   }
 
